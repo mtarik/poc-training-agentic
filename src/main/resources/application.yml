@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: shop-api
+  datasource:
+    url: jdbc:h2:mem:shop;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  jpa:
+    open-in-view: false
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: false
+  sql:
+    init:
+      mode: always
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    fr.formation.shop: INFO
+    # Passer à DEBUG pour afficher les requêtes SQL générées par Hibernate
+    org.hibernate.SQL: INFO

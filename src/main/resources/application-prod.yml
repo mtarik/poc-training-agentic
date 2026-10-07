@@ -1,0 +1,17 @@
+# Configuration de production : gérée par l'équipe Ops, ne pas modifier sans validation.
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  sql:
+    init:
+      mode: never
+
+logging:
+  level:
+    root: WARN
+    fr.formation.shop: INFO
